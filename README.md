@@ -26,6 +26,10 @@ The classification algorithm we have used was Logistic Regression.It is one of t
 
 We choose a random parameter sampling strategy as it provides the ranges for the learning rate and the dropout hyperparameters in the RandomParameterSampling object.There are huge benifits of using this such as it is very easy to use and it offers an unbiased selection and it is highly representative, it also enables researches to get clear conclusions.
 
+An estimator that will be called with sampled hyperparameters:  SKLearn creates an estimator for training in Scikit-learn experiments (logistic regression model is importet from Scikit-learn); here we also specify the compute target to be used.
+
+Primary metric name and goal: The name of the primary metric reported by the experiment runs (accuracy) and if we wish to maximize or minimize the primary metric (maximize).
+
 An early termination policy specifies that if you have a certain number of failures, HyperDrive will stop looking for the answer.
 We have defined an early termination policy to be used as BanditPolicy.This will terminate jobs that are not performing well and are not likely to yield a good model in the end.
 
@@ -35,14 +39,32 @@ lastly we collect and save the best model, that is, logistic regression with the
 In the automl model we have to again load the dataset using the tabular dataset factory dataset.
 we have initilise the automl configration and defined experiment_timeout_minutes, task, primary_metric, training_data, label_column_name, compute_target.
 lastly we run the automl and collected the best accuracy model.
+AutoMl parameters are as follows
+
+RawFeatureName: feature or column name present in the dataset.
+TypeDetected: input datatype
+Dropped: Indicates if the input feature was dropped or used,
+EngineeringFeatureCount: Number of features generated through automated feature engineering transforms,
+Transformations: List of transformations applied to input features to generate engineered features.
 
 ## Comparison between the two
 the two models were mostly similar as we have to load and prepare the dataset in both the dataset. But if to choose one the automl is much better as we do not have to do much work and code there and the result ie. the acuracy we got is nearly similar.
 In the hyperdrive model we have to define many thing such as parameters and early stopping policy and primary metric to optimize.
 
-In my understanding the automl model is mmuch better as compared to hyperdrive.
+In my understanding the automl model is mmuch better as compared to hyperdrive. 
 
+in hyperdrive we need to do the following things before the final hyperdrive run.
+
+1)Define the parameter search space
+2)Specify a primary metric to optimize
+3)Specify early termination policy for low-performing runs
+4)Allocate resources
+5)Launch an experiment with the defined configuration
+6)Visualize the training runs
+7)Select the best configuration for your model
+In AutomMl all these things are done automatically so it is time saving and efficient way.
 ## Future work
 We can try diffrent model and classification algorithm to get better result.
+Grid and Grid sampling can also be used in the hyper drive model
 
 
