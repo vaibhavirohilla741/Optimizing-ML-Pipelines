@@ -6,11 +6,11 @@ In this project, we build and optimize an Azure ML pipeline using the Python SDK
 This model is then compared to an Azure AutoML run.
 
 ## Summary
-This dataset contains data about the phonecall to a bank.It consist of data columns ike age,marital status, job, education etc.We seek to predict that the user will take the term deposite.
+This dataset contains data about the phonecall to a bank.It consist of data columns like age,marital status, job, education etc.We seek to predict that the user will take the term deposite.
 
-There were two different ways in which we have apploed the mocdel firstly by using scikit learn to fit the model and then by using the hypertunning we tunned the model.Next method was the automl model and lastly we compared the result of two.
+There were two different ways in which we have applied the model firstly by using scikit learn to fit the model and then by using the hypertunning we tunned the model.Next method was the automl model and lastly we compared the result of two.
 
-The accuracy which we got from the two models were
+## The accuracy which we got from the two models were
 AutoML Accuracy 0.9179059180576631
 Hyperdrive Accuracy 0.9072837632776934
 
@@ -32,12 +32,12 @@ We have defined an early termination policy to be used as BanditPolicy.This will
 lastly we collect and save the best model, that is, logistic regression with the tuned hyperparameters which yield the best accuracy score.
 
 ## AutoML
-In the automl model we have to again load the dataset using the tabular dataset factory.
+In the automl model we have to again load the dataset using the tabular dataset factory dataset.
 we have initilise the automl configration and defined experiment_timeout_minutes, task, primary_metric, training_data, label_column_name, compute_target.
 lastly we run the automl and collected the best accuracy model.
 
-
-the two models were mostly similar as we have to load and prepare the dataset in both the dataset. But if to choose one the automl is much better as we do not have to do much work and code there and the result ie. the acuracy we got the nearly similar.
+## Comparison between the two
+the two models were mostly similar as we have to load and prepare the dataset in both the dataset. But if to choose one the automl is much better as we do not have to do much work and code there and the result ie. the acuracy we got is nearly similar.
 In the hyperdrive model we have to define many thing such as parameters and early stopping policy and primary metric to optimize.
 
 In my understanding the automl model is mmuch better as compared to hyperdrive.
