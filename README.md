@@ -5,6 +5,8 @@ This project is part of the Udacity Azure ML Nanodegree.
 In this project, we build and optimize an Azure ML pipeline using the Python SDK and a provided Scikit-learn model.
 This model is then compared to an Azure AutoML run.
 
+![alt text](https://github.com/vaibhavirohilla741/Optimizing-ML-Pipelines/blob/main/img/architecture.png "Logo Title Text 1")
+
 ## Summary
 This dataset contains data about the phonecall to a bank.It consist of data columns like age,marital status, job, education etc.We seek to predict that the user will take the term deposite.
 
@@ -36,16 +38,36 @@ We have defined an early termination policy to be used as BanditPolicy.This will
 lastly we collect and save the best model, that is, logistic regression with the tuned hyperparameters which yield the best accuracy score.
 
 ## AutoML
-In the automl model we have to again load the dataset using the tabular dataset factory dataset.
+In the automl model ie. <u>Pre-fitted Soft Voting Classifier class model</u> we have to again load the dataset using the tabular dataset factory dataset.
 we have initilise the automl configration and defined experiment_timeout_minutes, task, primary_metric, training_data, label_column_name, compute_target.
-lastly we run the automl and collected the best accuracy model.
+lastly we run the automl and collected the best accuracy model.<br>
 AutoMl parameters are as follows
 
-RawFeatureName: feature or column name present in the dataset.<br>
-TypeDetected: input datatype<br>
-Dropped: Indicates if the input feature was dropped or used,<br>
-EngineeringFeatureCount: Number of features generated through automated feature engineering transforms,<br>
-Transformations: List of transformations applied to input features to generate engineered features.<br>
+* RawFeatureName: feature or column name present in the dataset.<br>
+* TypeDetected: input datatype<br>
+* Dropped: Indicates if the input feature was dropped or used,<br>
+* EngineeringFeatureCount: Number of features generated through automated feature engineering transforms,<br>
+* Transformations: List of transformations applied to input features to generate engineered features.<br>
+
+
+## Hyperparameters used in AutoMl
+ min_split_gain=0.47368421052631576,<br>
+ n_estimators=600,<br>
+ n_jobs=1,<br>
+ num_leaves=131,<br>
+ objective=None,<br>
+ random_state=None,<br>
+ reg_alpha=0.05263157894736842,<br>
+ reg_lambda=0.05263157894736842,<br>
+ silent=True,<br>
+ subsample=1,<br>
+ subsample_for_bin=200000,<br>
+ subsample_freq=0,<br>
+ verbose=-10))],<br>
+ verbose=False))],<br>
+ flatten_transform=None,<br>
+ weights=[0.125, 0.125, 0.25,0.125, 0.125, 0.125,0.125]))],<br>
+ verbose=False)<br>
 
 ## Comparison between the two
 the two models were mostly similar as we have to load and prepare the dataset in both the dataset. But if to choose one the automl is much better as we do not have to do much work and code there and the result ie. the acuracy we got is nearly similar.
@@ -55,16 +77,18 @@ In my understanding the automl model is mmuch better as compared to hyperdrive.
 
 in hyperdrive we need to do the following things before the final hyperdrive run.
 
-1)Define the parameter search space
-2)Specify a primary metric to optimize
-3)Specify early termination policy for low-performing runs
-4)Allocate resources
-5)Launch an experiment with the defined configuration
-6)Visualize the training runs
-7)Select the best configuration for your model
-In AutomMl all these things are done automatically so it is time saving and efficient way.
++ Define the parameter search space<br>
++ Specify a primary metric to optimize<br>
++ Specify early termination policy for low-performing runs<br>
++ Allocate resources<br>
++ Launch an experiment with the defined configuration<br>
++ Visualize the training runs<br>
++ Select the best configuration for your model<br>
++ In AutomMl all these things are done automatically so it is time saving and efficient way.<br>
 ## Future work
-We can try diffrent model and classification algorithm to get better result.
-Grid and Grid sampling can also be used in the hyper drive model
++ We can try diffrent model and classification algorithm to get better result.
++ Grid and Grid sampling can also be used in the hyper drive model
++ Light GBM -A fast, distributed, high-performance gradient-boosting (GBDT, GBRT, GBM, or MART) framework based on decision tree algorithms. It's used for ranking, classification, and many other machine-learning tasks.<br>
++ XGBoost- A fast, portable, and distributed gradient-boosting (GBDT, GBRT, or GBM) library for Python, R, Java, Scala, C++, and more. It runs on a single machine, and on Apache Hadoop and Spark.
 
 
