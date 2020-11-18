@@ -41,11 +41,11 @@ we have initilise the automl configration and defined experiment_timeout_minutes
 lastly we run the automl and collected the best accuracy model.
 AutoMl parameters are as follows
 
-RawFeatureName: feature or column name present in the dataset.
-/n TypeDetected: input datatype
-Dropped: Indicates if the input feature was dropped or used,
-EngineeringFeatureCount: Number of features generated through automated feature engineering transforms,
-Transformations: List of transformations applied to input features to generate engineered features.
+RawFeatureName: feature or column name present in the dataset.<br>
+TypeDetected: input datatype<br>
+Dropped: Indicates if the input feature was dropped or used,<br>
+EngineeringFeatureCount: Number of features generated through automated feature engineering transforms,<br>
+Transformations: List of transformations applied to input features to generate engineered features.<br>
 
 ## Comparison between the two
 the two models were mostly similar as we have to load and prepare the dataset in both the dataset. But if to choose one the automl is much better as we do not have to do much work and code there and the result ie. the acuracy we got is nearly similar.
