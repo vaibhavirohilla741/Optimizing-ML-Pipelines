@@ -49,6 +49,7 @@ AutoMl parameters are as follows
 * EngineeringFeatureCount: Number of features generated through automated feature engineering transforms,<br>
 * Transformations: List of transformations applied to input features to generate engineered features.<br>
 
+![alt text](https://github.com/vaibhavirohilla741/Optimizing-ML-Pipelines/blob/main/img/automl.JPG)
 
 ## Hyperparameters used in AutoMl
  min_split_gain=0.47368421052631576,<br>
