@@ -11,7 +11,7 @@ This dataset contains data about the phonecall to a bank.It consist of data colu
 There were two different ways in which we have applied the model firstly by using scikit learn to fit the model and then by using the hypertunning we tunned the model.Next method was the automl model and lastly we compared the result of two.
 
 ## The accuracy which we got from the two models were
-AutoML Accuracy 0.9179059180576631
+AutoML Accuracy 0.9179059180576631<br>
 Hyperdrive Accuracy 0.9072837632776934
 
 ## Scikit-learn Pipeline
