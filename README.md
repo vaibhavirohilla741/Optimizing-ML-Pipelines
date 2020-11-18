@@ -42,7 +42,7 @@ lastly we run the automl and collected the best accuracy model.
 AutoMl parameters are as follows
 
 RawFeatureName: feature or column name present in the dataset.
-TypeDetected: input datatype
+/n TypeDetected: input datatype
 Dropped: Indicates if the input feature was dropped or used,
 EngineeringFeatureCount: Number of features generated through automated feature engineering transforms,
 Transformations: List of transformations applied to input features to generate engineered features.
